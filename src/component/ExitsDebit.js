@@ -15,10 +15,13 @@ function ExitsDebit() {
     const [amount, setAmount] = useState()
     const [formData, setformData] = useState()
 
+    //const offline = "http://localhost:2000"
+    const online = "https://accountnote.herokuapp.com"
+
 
 
     useEffect(() => {
-        Axios.get("http://localhost:2000/credit")
+        Axios.get(online+"/credit")
             .then(res => {
                 setmainSelect(res.data)
             })
@@ -28,7 +31,7 @@ function ExitsDebit() {
     }, [])
 
     useEffect(() => {
-        Axios.get("http://localhost:2000/debit/reason", { params: { reason: reason.mainselect } })
+        Axios.get(online+"/debit/reason", { params: { reason: reason.mainselect } })
             .then(res => {
                 console.log(res.date)
                 setsubSelect(res.data)
@@ -39,7 +42,7 @@ function ExitsDebit() {
     }, [reason.mainselect])
 
     useEffect(() => {
-        Axios.get("http://localhost:2000/debit/amount", { params: { reason: reason.subselect } })
+        Axios.get(online+"/debit/amount", { params: { reason: reason.subselect } })
             .then(res => {
                 console.log("amount", res.date)
                 setAmount(res.data.availableAmount)
@@ -51,7 +54,7 @@ function ExitsDebit() {
 
     useEffect(() => {
         if (formData) {
-            Axios.post("http://localhost:2000/debit/exits", formData)
+            Axios.post(online+"/debit/exits", formData)
                 .then(res => {
                     console.log(res.data)                    
                 })
@@ -64,7 +67,7 @@ function ExitsDebit() {
     }, [formData])
 
     const getExits = () =>{
-        Axios.get("http://localhost:2000/debit/exits")
+        Axios.get(online+"/debit/exits")
         .then(res=>{
             console.log("exits",res.data)
         })

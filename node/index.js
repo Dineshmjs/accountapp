@@ -4,6 +4,8 @@ const cors = require('cors');
 const mongoose = require('mongoose');
 const morgan = require('morgan')
 
+const Port = process.env.PORT || 2000
+
 app.use(express.json())
 app.use(cors())
 app.use(morgan('dev'))
@@ -27,6 +29,6 @@ mongoose.connect(online, { useUnifiedTopology: true, useNewUrlParser: true, useF
 
 })
 
-app.listen(2000, () => {
+app.listen(Port, () => {
     console.log("Server run port 2000")
 })

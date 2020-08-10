@@ -12,10 +12,13 @@ function NewDebit() {
 
     console.log(formData)
 
+    //const offline = "http://localhost:2000"
+    const online = "https://accountnote.herokuapp.com"
+
 
     useEffect(() => {
         if (formData) {
-            Axios.post("http://localhost:2000/debit", formData)
+            Axios.post(online+"/debit", formData)
                 .then(res => {
                     console.log(res.data)
                 })
@@ -28,7 +31,7 @@ function NewDebit() {
     },[formData])
 
     useEffect(() => {
-        Axios.get("http://localhost:2000/credit")
+        Axios.get(online+"/credit")
             .then(res => {
                 console.log(res.data)
                 setCredit(res.data)
@@ -40,7 +43,7 @@ function NewDebit() {
 
     useEffect(() => {
         if (reason) {
-            Axios.get("http://localhost:2000/credit/amount", { params: { reason: reason } })
+            Axios.get(online+"/credit/amount", { params: { reason: reason } })
                 .then(res => {
                     setAmount(res.data.availableAmount)
                 })
@@ -54,7 +57,7 @@ function NewDebit() {
 
 
     const get = () => {
-        Axios.get("http://localhost:2000/debit")
+        Axios.get(online+"/debit")
             .then(res => {
                 console.log(res.data)
 
