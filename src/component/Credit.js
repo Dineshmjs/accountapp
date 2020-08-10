@@ -5,12 +5,21 @@ import Axios from 'axios';
 
 function Credit() {
 
-    const [formData, setformData] = useState()    
+    const [formData, setformData] = useState()  
+    const offline = {
+        post : "http://localhost:2000/credit",
+        get : "http://localhost:2000/credit"
+    }  
+    const online = {
+        post : "http://localhost:2000/credit",
+        get : "http://localhost:2000/credit"
+    }  
+
 
     useEffect(() => {
         console.log("useEffect")
         if (formData) {
-            Axios.post("http://localhost:2000/credit", formData)
+            Axios.post(offline.post, formData)
                 .then((res) => {
                     console.log(res.data)
                 })
@@ -22,7 +31,7 @@ function Credit() {
     })
 
     const get=()=>{
-        Axios.get("http://localhost:2000/credit")
+        Axios.get(offline.get)
         .then(res=>{
             console.log(res.data)
         })
