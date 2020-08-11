@@ -108,8 +108,9 @@ function ExitsDebit() {
                         <Field
                             as="select"
                             name="credit"
-                            className="form-control mt-2"                            
-                            onClick={(e) => setReason({ ...reason, mainselect: e.target.value })}
+                            className="form-control mt-2"    
+                            value={reason.mainselect}                        
+                            onChange={(e) => setReason({ ...reason, mainselect: e.target.value })}
                         >
                             <option value="">Select Credit</option>
                             {
@@ -125,8 +126,9 @@ function ExitsDebit() {
                         <Field
                             as="select"
                             name="debit"
-                            className="form-control mt-2"                            
-                            onClick={(e) => setReason({ ...reason, subselect: e.target.value })}
+                            className="form-control mt-2"     
+                            value = {reason.subselect}                        
+                            onChange={(e) => setReason({ ...reason, subselect: e.target.value })}
                         >
                             <option value="">Select Debit</option>
                             {

@@ -5,14 +5,14 @@ import Axios from 'axios';
 
 function Credit() {
 
-    const [formData, setformData] = useState()  
+    const [formData, setformData] = useState("")  
     
     //const offline = "http://localhost:2000"
     const online = "https://accountnote.herokuapp.com"
 
-    useEffect(() => {
-        console.log("useEffect")
-        if (formData) {
+    useEffect(() => {        
+        if(formData) {
+            console.log("formData",formData)
             Axios.post(online+"/credit", formData)
                 .then((res) => {
                     console.log(res.data)
@@ -20,9 +20,13 @@ function Credit() {
                 .catch(err => {
                     console.log(err)
                 })   
-            setTimeout(get,1000)                 
+            const getCredit = setTimeout(get,1000)   
+            
+            return ()=>{
+                clearInterval(getCredit)
+            }
         }
-    })
+    },[formData])
 
     const get=()=>{
         Axios.get(online+"/credit")

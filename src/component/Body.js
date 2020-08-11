@@ -7,7 +7,7 @@ function Body() {
     return (
         <div>
             <div className="tab-content">
-                <div className="container tab-pane fade" id="credite">
+                <div className="container tab-pane active" id="credite">
                     <Credit />
                 </div>
                 <div className="container tab-pane fade" id="debite">
