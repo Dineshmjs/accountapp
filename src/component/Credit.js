@@ -7,13 +7,13 @@ function Credit() {
 
     const [formData, setformData] = useState("")  
     
-    //const offline = "http://localhost:2000"
-    const online = "https://accountnote.herokuapp.com"
+    const offline = "http://localhost:2000"
+    //const online = "https://accountnote.herokuapp.com"
 
     useEffect(() => {        
         if(formData) {
             console.log("formData",formData)
-            Axios.post(online+"/credit", formData)
+            Axios.post(offline+"/credit", formData)
                 .then((res) => {
                     console.log(res.data)
                 })
@@ -29,7 +29,7 @@ function Credit() {
     },[formData])
 
     const get=()=>{
-        Axios.get(online+"/credit")
+        Axios.get(offline+"/credit")
         .then(res=>{
             console.log(res.data)
         })

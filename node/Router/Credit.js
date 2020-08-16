@@ -1,5 +1,5 @@
 const credit = require('express').Router();
-const creditSchema = require('../Schema/Credit')
+const creditSchema = require('../Schema/account')
 
 credit.post("/",async(req,res)=>{
     const {reason,amount} = req.body;

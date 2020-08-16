@@ -15,15 +15,18 @@ function ExitsDebit() {
     const [amount, setAmount] = useState()
     const [formData, setformData] = useState()
 
-    //const offline = "http://localhost:2000"
-    const online = "https://accountnote.herokuapp.com"
 
+    const offline = "http://localhost:2000"
+    //const online = "https://accountnote.herokuapp.com"
 
+    console.log("subselect",subselect)
+   
 
     useEffect(() => {
-        Axios.get(online+"/credit")
+        Axios.get(offline+"/credit")
             .then(res => {
-                setmainSelect(res.data)
+                console.log("mainselect",res.data)
+                setmainSelect(res.data)                
             })
             .catch(err => {
                 console.log(err)
@@ -31,30 +34,35 @@ function ExitsDebit() {
     }, [])
 
     useEffect(() => {
-        Axios.get(online+"/debit/reason", { params: { reason: reason.mainselect } })
+        if(reason.mainselect){
+        Axios.get(offline+"/debit/reason", { params: { credit: reason.mainselect } })
             .then(res => {
-                console.log(res.date)
-                setsubSelect(res.data)
+                console.log("subselect",res.data.debit)
+                const arr = res.data.debit
+                setsubSelect(arr)
             })
             .catch(err => {
                 console.log(err)
             })
+        }    
     }, [reason.mainselect])
 
     useEffect(() => {
-        Axios.get(online+"/debit/amount", { params: { reason: reason.subselect } })
+        if(reason.subselect){
+        Axios.get(offline+"/debit/amount", { params: {credit:reason.mainselect, debit: reason.subselect } })
             .then(res => {
-                console.log("amount", res.date)
-                setAmount(res.data.availableAmount)
+                console.log("amount", res.data)
+                //setAmount(res.data.availableAmount)
             })
             .catch(err => {
                 console.log(err)
             })
+        }
     }, [reason.subselect])
 
     useEffect(() => {
         if (formData) {
-            Axios.post(online+"/debit/exits", formData)
+            Axios.post(offline+"/debit/exits", formData)
                 .then(res => {
                     console.log(res.data)                    
                 })
@@ -67,7 +75,7 @@ function ExitsDebit() {
     }, [formData])
 
     const getExits = () =>{
-        Axios.get(online+"/debit/exits")
+        Axios.get(offline+"/debit/exits")
         .then(res=>{
             console.log("exits",res.data)
         })
@@ -104,6 +112,7 @@ function ExitsDebit() {
                 validationSchema={validationSchema}
             >
                 <Form>
+                    
                     <div>
                         <Field
                             as="select"
@@ -118,6 +127,7 @@ function ExitsDebit() {
                                     <option key={index} value={option.reason} >{option.reason}</option>
                                 ))
                             }
+                            
                         </Field>
                         <ErrorMessage name="credit" />
                     </div>
@@ -130,6 +140,7 @@ function ExitsDebit() {
                             value = {reason.subselect}                        
                             onChange={(e) => setReason({ ...reason, subselect: e.target.value })}
                         >
+                            
                             <option value="">Select Debit</option>
                             {
                                 subselect.map((option, index) => (

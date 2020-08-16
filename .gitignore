@@ -22,7 +22,7 @@
 #firebase
 .firebase/
 .firebaserc
-.gitignore
+.gitignoregit
 
 npm-debug.log*
 yarn-debug.log*
