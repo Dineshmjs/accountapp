@@ -1,13 +1,13 @@
 import {credit} from './Type';
 
 const initialState = {
-    credit:[]
+    data:[]
 }
 
 const reducer = (state=initialState,action)=>{
     switch(action.type){
         case credit : return{
-            credit:action.data
+            data:action.data
         }
         default :return state
     }

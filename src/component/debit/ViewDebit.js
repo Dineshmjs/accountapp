@@ -1,28 +1,11 @@
-import React, {useState, useEffect } from 'react';
-import {http} from '../../axios';
+import React from 'react';
+
 
 
 function ViewDebit(props) {
 
 
-    const {availableAmount,credit } = props
-    
-    const [data, setData] = useState([]) 
-
-
-    useEffect(() => {        
-        http.get("debit", { params: { credit: credit } })
-            .then(res => {
-                console.log("resdata",res.data)  
-                setData(res.data.debit)  
-
-            })
-            .catch(err=>{
-                console.log(err)
-            })
-
-    }, [credit])
-    
+    const {availableAmount,data} = props   
 
     var amounts = 0
     

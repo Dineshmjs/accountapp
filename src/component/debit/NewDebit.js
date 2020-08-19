@@ -1,13 +1,26 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import {http} from '../../axios';
 import ViewDebit from './ViewDebit';
 
 
+
 function NewDebit({credit,amount}) {
 
-    const [credits, setCredit] = useState(credit);
+    const [data, setdata] = useState([]);
+    
+
+    useEffect(() => {
+        http.get("debit", { params: { credit: credit } })
+        .then(res => {
+            console.log("resdata",res.data)  
+            setdata(res.data.debit)  
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    }, [])
         
     // console.log("data",data)
     const initialValue = {
@@ -25,7 +38,17 @@ function NewDebit({credit,amount}) {
             .catch(err=>{
                 console.log(err)
             })
-        setCredit(credit)    
+
+            http.get("debit", { params: { credit: credit } })
+            .then(res => {
+                console.log("resdata",res.data)  
+                setdata(res.data.debit)  
+            })
+            .catch(err=>{
+                console.log(err)
+            })
+
+       
 
         props.resetForm()
     }
@@ -73,13 +96,13 @@ function NewDebit({credit,amount}) {
                             <ErrorMessage name="amount" />
                         </div>
                         <div className="col-3 p-0 w3-center " >
-                            <button className="btn btn-success w3-left ml-2" type="submit" >Add</button>
+                            <button className="btn btn-success w3-left ml-2" type="submit">Add</button>
                         </div>
                     </div>
                 </Form>
             </Formik>
 
-            <ViewDebit credit = {credits} availableAmount={amount}/>
+            <ViewDebit credit = {credit} availableAmount={amount} data={data} />
         </div>
     )
 }
