@@ -5,13 +5,13 @@ import {http} from '../../axios';
 function ViewDebit(props) {
 
 
-    const { reload, availableAmount } = props
+    const { availableAmount } = props
     
     const [data, setData] = useState([]) 
 
 
     useEffect(() => {
-        console.log("dataprops",props.credit)
+        
         http.get("debit", { params: { credit: props.credit } })
             .then(res => {
                 console.log("resdata",res.data)  
@@ -22,7 +22,7 @@ function ViewDebit(props) {
                 console.log(err)
             })
 
-    }, [reload])
+    }, [props])
     
 
     var amounts = 0
