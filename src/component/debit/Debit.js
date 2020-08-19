@@ -44,7 +44,7 @@ function Debit(props) {
 
                         <div id={`id${data._id}`} className="w3-pale-red collapse hide">
                             <div className="w3-container">
-                                <NewDebit credit={data.reason} data={data.debit} amount={data.amount} />
+                                <NewDebit credit={data.reason} amount={data.amount} />
                             </div>
                         </div>
                     </div>)

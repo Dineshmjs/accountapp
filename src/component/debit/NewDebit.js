@@ -5,7 +5,7 @@ import {http} from '../../axios';
 import ViewDebit from './ViewDebit';
 
 
-function NewDebit({credit,data,amount}) {
+function NewDebit({credit,amount}) {
 
     const [reload, setreload] = useState(1);
         
@@ -79,7 +79,7 @@ function NewDebit({credit,data,amount}) {
                 </Form>
             </Formik>
 
-            <ViewDebit data = {data} reload={reload}  availableAmount={amount}/>
+            <ViewDebit credit = {credit} reload={reload}  availableAmount={amount}/>
         </div>
     )
 }
