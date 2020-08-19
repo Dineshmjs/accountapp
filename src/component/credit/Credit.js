@@ -4,10 +4,11 @@ import * as yup from 'yup'
 import ViewCredit from './ViewCredit';
 import { useDispatch } from 'react-redux';
 import { CreditAction } from '../../redux/Action'
-import { postCredit, getCredit } from '../../axios/Credit';
+import {http} from '../../axios'
 
 function Credit() {
     
+
     const dispatch = useDispatch()
 
 
@@ -26,8 +27,23 @@ function Credit() {
     const submit = (values, props) => {
         console.log(values)
         setClick(click + 1)
-        postCredit(values);
-        getCredit();
+
+        http.post("credit", values)
+            .then((res) => {
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+        http.get("credit")
+            .then(res => {
+                console.log(res.data)
+                setData(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
 
         props.resetForm()
 

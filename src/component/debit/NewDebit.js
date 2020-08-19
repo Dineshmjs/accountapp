@@ -1,28 +1,24 @@
 import React, { useState } from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
-import Axios from 'axios';
+import {http} from '../../axios';
 import ViewDebit from './ViewDebit';
 
 
-function NewDebit(props) {
+function NewDebit({credit,data,amount}) {
 
-    const offline = "http://localhost:2000"
-    //const online = "https://accountnote.herokuapp.com"
-
-    const [reload, setreload] = useState(0);
-
-    
-
+    const [reload, setreload] = useState(1);
+        
+    // console.log("data",data)
     const initialValue = {
         reason: "",
         amount: "",
-        credit:props.credit
+        credit:credit
     }
     const submit = (values, props) => {
         console.log(values)    
 
-        Axios.post(offline+"/debit",values)
+        http.post("debit",values)
             .then(res=>{
                 console.log(res.data)
             })
@@ -83,7 +79,7 @@ function NewDebit(props) {
                 </Form>
             </Formik>
 
-            <ViewDebit data = {props.data} reload={reload} credit = {props.credit}/>
+            <ViewDebit data = {data} reload={reload}  availableAmount={amount}/>
         </div>
     )
 }

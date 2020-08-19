@@ -1,53 +1,51 @@
-import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+import React, { useEffect } from 'react';
+import {http} from '../../axios';
 
 
 function ViewDebit(props) {
 
-    const offline = "http://localhost:2000"
-    //const online = "https://accountnote.herokuapp.com"
 
-    const { data, reload, credit } = props
+    const { data, reload, availableAmount } = props
+    console.log("data",data)
+   
     console.log(reload, data)
 
-    const [getData, setgetData] = useState([])
-    const [amount, setAmount] = useState(0)
+  
 
     useEffect(() => {
-        Axios.get(offline + "/debit", { params: { credit: credit } })
+        console.log(reload)
+        http.get("debit", { params: { credit: data.reason } })
             .then(res => {
-                console.log(res.data)
-                setgetData(res.data.debit)
-                setAmount(res.data.amount)
+                console.log(res.data)                
+            })
+            .catch(err=>{
+                console.log(err)
             })
 
-    }, [reload,credit])
-    if (getData) {
-        var x;
-        var totalDebit = 0;
-        
-        for (x of getData) {
-            totalDebit = totalDebit + x.amount            
-        }
+    }, [data])
+    
 
-
-    }
+    var amounts = 0
+    
     return (
         <div>
             {
-                getData.map((debit, index) => {
+                
+                data.map((debit, index) => {    
+                    amounts = debit.amount + amounts   
+                                  
                     return (
                         <div className="row" key={index}>
-                            <div className="col-6">{debit.reason}</div>
-                            <div className="col-6 text-danger">{debit.amount}</div>
+                            <div className="col-4">{debit.reason}</div>
+                            <div className="col-4 text-danger">{debit.amount}</div>
+                            <div className="col-4 text-success">{availableAmount - amounts}</div>
                         </div>
                     )
                 })
             }
             <div className="row">
-                <div className="col-4">Total</div>
-                <div className="col-4">{totalDebit}</div> 
-                <div className="col-4">{amount-totalDebit}</div>               
+                <div className="col-6">Total</div>
+                <div className="col-6">{amounts}</div>                                
             </div>            
         </div>
     )
