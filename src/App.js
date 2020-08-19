@@ -1,12 +1,16 @@
 import React from 'react';
-import Formik from './component/Formikprops';
-// import Main from './component/Main';
+import Main from './component/Main';
+import { Provider } from 'react-redux';
+import store from './redux/Store';
 
-function App() {  
+function App() {
   return (
     <div>
-      {/* <Main /> */}
-      {/* <Formik /> */}
+      <Provider store={store}>
+        <Main />
+      </Provider>
+      
+
     </div>
   );
 }

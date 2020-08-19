@@ -2,13 +2,13 @@ const express = require('express');
 const app = express();
 const cors = require('cors');
 const mongoose = require('mongoose');
-const morgan = require('morgan')
+//const morgan = require('morgan')
 
 const Port = process.env.PORT || 2000
 
 app.use(express.json())
 app.use(cors())
-app.use(morgan('dev'))
+//app.use(morgan('dev'))
 
 const credit = require('./Router/Credit')
 const debit = require('./Router/Debit')

@@ -1,24 +1,31 @@
 import React from 'react'
-import Credit from './Credit'
-import Debit from './Debit'
-import View from './View'
+import Credit from './credit/Credit'
+import Debit from './debit/Debit'
+import View from './view/View'
 
-function Body() {
-    return (
+
+function Body({ component }) {
+    // const credit = useSelector(state => state.credit)
+    // console.log("credit", credit)    
+
+    return(
+        
         <div>
-            <div className="tab-content">
-                <div className="container tab-pane active" id="credite">
-                    <Credit />
-                </div>
-                <div className="container tab-pane fade" id="debite">
-                    <Debit />
-                </div>
-                <div className="container tab-pane fade" id="view">
-                    <View />
-                </div>
-            </div>
+            {
+                component === "Credit" && <Credit />  
+            }
+            {    
+                component === "Debit" && <Debit />
+            }
+            {            
+                component === "View" && <View />
+
+            }
         </div>
+            
+        
     )
+
 }
 
 export default Body
