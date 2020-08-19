@@ -12,7 +12,8 @@ debit.post("/", async (req, res) => {
         availableAmount: req.body.amount
     }
     console.log(postData)
-    const insert = await account.findOneAndUpdate({reason:req.body.credit}, {$push : { debit:postData }}  )    
+    const insert = await account.findOneAndUpdate({reason:req.body.credit}, {$push : { debit:postData }}  )
+    res.send("DebitPost")    
     
 })
 

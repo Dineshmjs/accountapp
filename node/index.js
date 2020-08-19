@@ -20,9 +20,9 @@ app.get('/', (req, res) => {
 app.use("/credit",credit) 
 app.use("/debit",debit)
 
-//const online ="mongodb+srv://root:dineshmjs@cluster0-y8uer.gcp.mongodb.net/account"
-const offline = "mongodb://localhost:27017/account" 
-mongoose.connect(offline, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify : false }, (err) => {
+// const url ="mongodb+srv://root:dineshmjs@cluster0-y8uer.gcp.mongodb.net/account"
+const url = "mongodb://localhost:27017/account" 
+mongoose.connect(url, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify : false }, (err) => {
     if (err) {
         console.log(err)
     }

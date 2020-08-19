@@ -7,7 +7,7 @@ import ViewDebit from './ViewDebit';
 
 function NewDebit({credit,amount}) {
 
-    const [reload, setreload] = useState(1);
+    const [credits, setCredit] = useState(credit);
         
     // console.log("data",data)
     const initialValue = {
@@ -25,7 +25,7 @@ function NewDebit({credit,amount}) {
             .catch(err=>{
                 console.log(err)
             })
-        setreload(reload+1)    
+        setCredit(credit)    
 
         props.resetForm()
     }
@@ -79,7 +79,7 @@ function NewDebit({credit,amount}) {
                 </Form>
             </Formik>
 
-            <ViewDebit credit = {credit} reload={reload}  availableAmount={amount}/>
+            <ViewDebit credit = {credits} availableAmount={amount}/>
         </div>
     )
 }
