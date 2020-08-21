@@ -1,5 +1,5 @@
 const credit = require('express').Router();
-const account = require('../Schema/account');
+const creditSchema = require('../Schema/Credit');
 
 credit.post("/",async(req,res)=>{
     const {reason,amount} = req.body;
@@ -8,7 +8,7 @@ credit.post("/",async(req,res)=>{
         availableAmount:req.body.amount
     }
     console.log(postData)
-    const data = await new account(postData)
+    const data = await new creditSchema(postData)
     await data.save()
 
     res.send(data)
@@ -17,7 +17,7 @@ credit.post("/",async(req,res)=>{
 })  
 
 credit.get("/", async(req,res)=>{
-    const data = await account.find();
+    const data = await creditSchema.find();
     res.json(data)
 })
 

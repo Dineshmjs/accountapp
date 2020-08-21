@@ -12,11 +12,7 @@ const credit = mongoose.Schema({
     availableAmount:{
         type:Number,
         required:true
-    },
-    name:{
-        type:String,
-        required:true
-    },
+    },    
     date:{
         type:Date,
         default:Date.now

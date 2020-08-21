@@ -5,9 +5,7 @@ import View from './view/View'
 
 
 function Body({ component }) {
-    // const credit = useSelector(state => state.credit)
-    // console.log("credit", credit)    
-
+    
     return(
         
         <div>

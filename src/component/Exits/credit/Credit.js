@@ -3,8 +3,8 @@ import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup'
 import ViewCredit from './ViewCredit';
 import { useDispatch } from 'react-redux';
-import { CreditAction } from '../../redux/Action'
-import {http} from '../../axios'
+import { CreditAction } from '../../../redux/Action'
+import {http} from '../../../axios'
 
 function Credit() {
     

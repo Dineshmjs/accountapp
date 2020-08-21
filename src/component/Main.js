@@ -1,16 +1,13 @@
 import React from 'react'
-import Menu from './Menu'
-import Head from './Head'
-import Body from './Body'
+import Header from './Header';
+import Credit from './Credit'
 
 function Main() {
-
     return (
         <div>
-            <Head />
-            <Menu />   
-            <Body />         
-        </div>        
+            <Header />  
+            <Credit />          
+        </div>
     )
 }
 

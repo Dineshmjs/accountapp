@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import Body from './Body';
+// import Body from './Body';
 
 function Menu() {
 
@@ -26,7 +26,7 @@ function Menu() {
                 </li>
             </ul>      
 
-            <Body component = {state} />     
+            {/* <Body component = {state} />      */}
         </div>
         
     )
