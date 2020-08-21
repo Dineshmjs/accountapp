@@ -10,7 +10,6 @@ credit.post("/",async(req,res)=>{
     console.log(postData)
     const data = await new creditSchema(postData)
     await data.save()
-
     res.send(data)
     
 
