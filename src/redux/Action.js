@@ -1,23 +1,9 @@
-import {credit} from '../redux/Type'
-import { http } from '../axios'
+import {credit} from './Type';
 
-export const CreditAction = (data) =>{
+export const clickCredit = (data) =>{
     return{
         type:credit,
         data:data
     }
-}
-
-export const fetch = (credit) =>{
-    return(dispatch)=>{
-        http.get("debit", { params: { credit: credit } })
-            .then(res => {
-                console.log("resdata",res.data)  
-                // setData(res.data.debit)  
-                dispatch(CreditAction(res.data.debit))
-            })
-            .catch(err=>{
-                console.log(err)
-            })
-    }
-}
+    
+} 

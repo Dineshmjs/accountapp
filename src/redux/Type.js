@@ -1,2 +1,2 @@
-export const credit = "Credit";
+export const credit = "clickCredit";
 

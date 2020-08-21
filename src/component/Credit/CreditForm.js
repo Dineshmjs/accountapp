@@ -1,22 +1,43 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup';
+import { http } from '../../axios';
+import { useDispatch } from 'react-redux';
+import { clickCredit } from '../../redux/Action'
 
 function CreditForm() {
+
+    const dispatch = useDispatch();
 
     const initialValue = {
         reason: "",
         amount: ""
     }
 
-    const submit = (values) => {
+    const submit = (values, formProps) => {
         console.log("form values", values)
+        http.post('credit', values)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+        formProps.resetForm();
+
+        dispatch(clickCredit(false))
+
+
     }
 
     const validationSchema = yup.object({
         reason: yup.string().required("Enter Purpose"),
         amount: yup.string().required("Enter Amount")
     })
+
+
+
 
     return (
         <div className="container">
@@ -37,7 +58,7 @@ function CreditForm() {
                     </div>
 
                     <div className="w3-center">
-                        <button className="btn btn-primary">Submit</button>
+                        <button className="btn btn-primary" type="submit" >Submit</button>
                     </div>
 
                 </Form>

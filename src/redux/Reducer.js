@@ -1,7 +1,7 @@
 import {credit} from './Type';
 
 const initialState = {
-    data:[]
+    data:false
 }
 
 const reducer = (state=initialState,action)=>{
