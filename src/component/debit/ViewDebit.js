@@ -1,16 +1,17 @@
 import React, { useState, useEffect } from 'react';
 import { http } from '../../axios'
 import {useSelector,useDispatch} from 'react-redux';
-import {creditId} from '../../redux/Action'
+import {debitId} from '../../redux/Action'
 import {Link} from 'react-router-dom'
 
-function ViewCredit() {
+function ViewDebit() {
 
-    const reload = useSelector(state=>state.creditSubmit)
+    const reload = useSelector(state=>state.debitSubmit)
+    const id = useSelector(state=>state.creditId)
     const dispatch = useDispatch()
     const [data, setData] = useState([])
     useEffect(() => {
-        http.get("credit")
+        http.get(`debit?id=${id}`)
             .then(res => {
                 console.log(res.data)
                 setData(res.data)
@@ -32,8 +33,8 @@ function ViewCredit() {
         <div className="container">
             {
                 data.map(data =>
-                    <Link to="/debit" key={data._id} style={decoration}>
-                        <div className="card w3-center mt-2 mb-2 " style={style} onClick={()=>dispatch(creditId(data._id))}>
+                    <Link to="/view" key={data._id} style={decoration}>
+                        <div className="card w3-center mt-2 mb-2 " style={style} onClick={()=>dispatch(debitId(data._id))}>
                             <div className="row" >
                                 <div className="col-4">{data.reason}</div>
                                 <div className="col-4 text-success">{data.amount}</div>
@@ -47,4 +48,4 @@ function ViewCredit() {
     )
 }
 
-export default ViewCredit
+export default ViewDebit

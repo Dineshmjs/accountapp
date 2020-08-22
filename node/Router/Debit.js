@@ -1,30 +1,40 @@
 const debit = require('express').Router();
-const account = require('../Schema/account');
+const debitSchema = require('../Schema/Debit');
+const creditSchema = require('../Schema/Credit');
 
-
-
-
-
-debit.post("/", async (req, res) => {
-    console.log("debit")
-    const postData =await {
+debit.post("/",async(req,res)=>{    
+    const postData = {
         ...req.body,
-        availableAmount: req.body.amount
+        availableAmount:req.body.amount
     }
     console.log(postData)
-    const insert = await account.findOneAndUpdate({reason:req.body.credit}, {$push : { debit:postData }}  )
-    res.send("DebitPost")    
-    
-})
-
-debit.get("/",async(req,res)=>{
-    const {credit} = req.query;
-
-    const data =await account.findOne({reason:credit})
+    const data = await new debitSchema(postData)   
+    const credit =await creditSchema.findOne({_id:req.body.credit}) 
+    await data.save(async(err)=>{
+        if(!err){
+            console.log("update")
+            const av = credit.availableAmount - req.body.amount
+            const update = await creditSchema.findOneAndUpdate({_id:req.body.credit},{$set:{availableAmount:av}})
+            console.log(update)
+        }
+        if(err){
+            console.log("Error",err)
+        }
+    })
     res.send(data)
+    
+
+})  
+
+debit.get("/", async(req,res)=>{
+    const data = await debitSchema.find({credit:req.query.id});
+    res.json(data)
 })
 
-
-
+// credit.get("/amount", async(req,res)=>{
+//     const data = await debitSchema.findOne({reason:req.query.reason});
+//     res.json(data)
+// })
 
 module.exports = debit;
+ 

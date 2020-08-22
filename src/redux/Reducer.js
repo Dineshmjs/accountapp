@@ -1,13 +1,29 @@
-import {credit} from './Type';
+import {creditsubmit,creditid, debitsubmit, debitid} from './Type';
 
 const initialState = {
-    data:false
+    creditSubmit:false,
+    creditId:"",
+    debitSubmit:false,
+    debitId:""
 }
 
 const reducer = (state=initialState,action)=>{
     switch(action.type){
-        case credit : return{
-            data:action.data
+        case creditsubmit : return{
+            ...state,
+            creditSubmit:action.data
+        }
+        case creditid : return{
+            ...state,
+            creditId:action.data
+        }
+        case debitsubmit : return{
+            ...state,
+            debitSubmit:action.data
+        }
+        case debitid : return{
+            ...state,
+            debitId:action.data
         }
         default :return state
     }

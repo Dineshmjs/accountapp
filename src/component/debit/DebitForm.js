@@ -2,21 +2,25 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup';
 import { http } from '../../axios';
-import { useDispatch } from 'react-redux';
-import { creditSubmit } from '../../redux/Action'
+import { useSelector,useDispatch } from 'react-redux';
+import { debitSubmit } from '../../redux/Action'
 
 function CreditForm() {
 
+    const id = useSelector(state=>state.creditId)
     const dispatch = useDispatch();
+    console.log(id)
+
 
     const initialValue = {
+        credit:id,
         reason: "",
         amount: ""
     }
 
     const submit = (values, formProps) => {
         console.log("form values", values)
-        http.post('credit', values)
+        http.post('debit', values)
             .then(res => {
                 console.log(res.data)
             })
@@ -33,7 +37,7 @@ function CreditForm() {
 
     const dis = () =>{
         console.log("dispatch")
-        dispatch(creditSubmit(false))
+        dispatch(debitSubmit(false))
     }
 
     const validationSchema = yup.object({
