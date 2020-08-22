@@ -7,15 +7,13 @@ debit.post("/",async(req,res)=>{
         ...req.body,
         availableAmount:req.body.amount
     }
-    console.log(postData)
+    
     const data = await new debitSchema(postData)   
-    const credit =await creditSchema.findOne({_id:req.body.credit}) 
+    const credit = await creditSchema.findOne({_id:req.body.credit}) 
     await data.save(async(err)=>{
-        if(!err){
-            console.log("update")
+        if(!err){            
             const av = credit.availableAmount - req.body.amount
-            const update = await creditSchema.findOneAndUpdate({_id:req.body.credit},{$set:{availableAmount:av}})
-            console.log(update)
+            const update = await creditSchema.findOneAndUpdate({_id:req.body.credit},{$set:{availableAmount:av}})           
         }
         if(err){
             console.log("Error",err)

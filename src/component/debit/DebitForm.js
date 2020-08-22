@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState, useEffect} from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup';
 import { http } from '../../axios';
@@ -8,6 +8,9 @@ import { debitSubmit } from '../../redux/Action'
 function CreditForm() {
 
     const id = useSelector(state=>state.creditId)
+    const reload = useSelector(state => state.debitSubmit)
+    const [av,setav] = useState("")
+    console.log(av)
     const dispatch = useDispatch();
     console.log(id)
 
@@ -17,6 +20,17 @@ function CreditForm() {
         reason: "",
         amount: ""
     }
+
+    useEffect(() => {
+        http.get("credit/id",{params:{id:id}})
+            .then(res => {
+                console.log("av",res.data)
+                setav(res.data.availableAmount)
+            })
+            .catch(err => {
+                console.log(err)
+            })
+    }, [reload, id])
 
     const submit = (values, formProps) => {
         console.log("form values", values)
@@ -32,7 +46,6 @@ function CreditForm() {
 
         setTimeout(dis,1000)
 
-
     }
 
     const dis = () =>{
@@ -42,11 +55,8 @@ function CreditForm() {
 
     const validationSchema = yup.object({
         reason: yup.string().required("Enter Purpose"),
-        amount: yup.string().required("Enter Amount")
+        amount: yup.number().lessThan(av+1).moreThan(0).required("Enter Amount")
     })
-
-
-
 
     return (
         <div className="container">
