@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { http } from '../../axios'
 import { useSelector,useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom'
-import { debitDelete } from '../../redux/Action';
+import { debitDelete, debitId } from '../../redux/Action';
 
 
 function ViewDebit() {
@@ -68,13 +68,13 @@ function ViewDebit() {
                                 <div className="col-4">{data.reason}</div>
                                 <div className="col-4 text-success">{data.amount}</div>
                                 <div className="col-2">
-                                    <Link to="/edit">
+                                    <Link to="/edit" onClick={() => dispatch(debitId(data._id))}>
                                         <i className="material-icons w3-text-danger w3-small">border_color </i>
                                     </Link>
                                 </div>
                                 <div className="col-2">
-                                    <Link to="/debit">
-                                        <i className="material-icons w3-text-danger w3-small" onClick={() => Delete(data._id,data.amount)}>delete </i>
+                                    <Link to="/debit" onClick={() => Delete(data._id,data.amount)}>
+                                        <i className="material-icons w3-text-danger w3-small" >delete </i>
                                     </Link>
                                 </div>
                             </div>

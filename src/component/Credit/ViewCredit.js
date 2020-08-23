@@ -6,7 +6,7 @@ import {Link} from 'react-router-dom'
 
 function ViewCredit() {
 
-    const reload = useSelector(state=>state.creditSubmit)
+    const reload = useSelector(state=>state)
     const dispatch = useDispatch()
     const [data, setData] = useState([])
     useEffect(() => {

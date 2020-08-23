@@ -30,6 +30,38 @@ credit.delete("/", async(req,res)=>{
     res.json(data)
 })
 
+credit.put("/", async(req,res)=>{
+    var av,diff;
+
+    const {_id,reason,amount,availableAmount} = req.body
+
+    const prevAmount = await creditSchema.findById({_id:_id})
+
+    if(prevAmount.amount < amount){
+        diff = amount - prevAmount.amount
+        av = availableAmount + diff
+    }
+    if(prevAmount.amount > amount ){
+        diff = prevAmount.amount - amount
+        av = availableAmount - diff
+    }
+    if(prevAmount.amount === amount){
+        av = availableAmount 
+    }
+
+    const find = {
+        _id : _id
+    }
+    const updateValues = {
+        reason:reason,
+        amount:amount,
+        availableAmount:av
+    }
+    
+    const update = await creditSchema.updateOne(find,{$set:updateValues});   
+    res.json(update)
+})
+
 
 module.exports = credit;
  

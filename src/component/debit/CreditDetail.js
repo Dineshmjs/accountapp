@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux'
+import { useSelector,useDispatch } from 'react-redux'
 import { http } from '../../axios'
 import { Link } from 'react-router-dom'
+import { creditDelete } from '../../redux/Action'
 
 function CreditDetail() {
     const id = useSelector(state => state.creditId)
     const reload = useSelector(state =>state)
+    const dispatch = useDispatch()
     
     
 
@@ -32,10 +34,12 @@ function CreditDetail() {
         http.delete("credit", { params: { id: id } })
             .then(res => {
                 console.log(res.data)
+
             })
             .catch(err => {
                 console.log(err)
             })
+        dispatch(creditDelete())    
     }
 
 

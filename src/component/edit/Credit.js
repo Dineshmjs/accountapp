@@ -1,88 +1,81 @@
-import React, { useState, useEffect } from 'react';
-import { http } from '../../axios'
+import React, { useState, useEffect } from 'react'
 import { useSelector } from 'react-redux';
+import { http } from '../../axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as yup from 'yup'
-// import { debitId } from '../../redux/Action'
-
-
+import * as yup from 'yup';
 
 function Credit() {
 
-
-    const reload = useSelector(state => state.debitSubmit)
-    const id = useSelector(state => state.creditId)
-
-    const initialCredit = {
+    const initialValues = {
         reason: "",
-        amount: "",
-        availableAmount: ""
+        amount: ""
     }
 
+    const id = useSelector(state => state.creditId)
+    const [data, setData] = useState(initialValues)
 
-    const [credit, setcredit] = useState(initialCredit)
     useEffect(() => {
-
         http.get("credit/id", { params: { id: id } })
             .then(res => {
-                console.log("credit id",res.data)
-                setcredit(res.data)
+                console.log(res.data)
+                setData(res.data)
             })
             .catch(err => {
                 console.log(err)
             })
-    }, [reload, id])
+    }, [])
 
-    const style = {
-        paddingTop: "10px",
-        paddingBottom: "10px"
+
+    const submit = (valuse,props) => {
+        console.log(valuse)
+        http.put("credit",valuse)
+        .then(res=>{
+            console.log(res.data)
+            if(res.data.ok === 1){
+                alert("Success")
+            }
+            if(res.data.ok === 0){
+                alert("update Unsuccess")
+            }
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+        
+        
     }
 
-    const submit = (values) => {
-        console.log("edit values", values)
-    }
-
-    const validationShema = yup.object({
-        reason: yup.string().required("Enter valid string"),
-        amount: yup.number().required("plase Enter amount")
+    const validationSchema = yup.object({
+        reason: yup.string().required("Enter valid Reason"),
+        amount: yup.number().moreThan(data.amount - data.availableAmount -1).required("Enter Amount")
     })
-
-    // const initialValues = {
-
-    // }
-
-    console.log("rerender")
-
     return (
-        <div className="card w3-teal w3-center mt-2 mb-2 " style={style} >
-            <Formik
-                initialValues={credit}
-                onSubmit={submit}
-                validationShema={validationShema}
-                enableReinitialize
-            >
-                <Form>
-                    <div className="row" >
-                        <div className="col-4 ">
-                            <Field type="text" name="reason" className="form-control" />
+        <div>
+            <div className="card w3-center mb-3">
+                <h5>Update Credit</h5>
+            </div>
+            <div className="container">
+                <Formik
+                    initialValues={data || initialValues}
+                    onSubmit={submit}
+                    validationSchema={validationSchema}
+                    enableReinitialize
+                >
+                    <Form>
+                        <div>
+                            <Field type="text" name="reason" className="mb-2 ml-2 form-control" />
                             <ErrorMessage name="reason" />
                         </div>
-
-                        <div className="col-4 ">
-                            <Field type="number" name="amount" className="form-control" />
+                        <div>
+                            <Field type="number" name="amount" className="mb-2 ml-2 form-control" />
                             <ErrorMessage name="amount" />
                         </div>
-                        <div className="col-2 ">
-                            <i className="material-icons">done</i>
+                        <div className="w3-center">
+                            <button type="submit" className="btn btn-primary">Update</button>
                         </div>
-                        <div className="col-2">
-                            <i className="material-icons">delete</i>
-                        </div>
-                    </div>
-                </Form>
-
-            </Formik>
-
+                    </Form>
+                </Formik>
+            </div>
         </div>
     )
 }
