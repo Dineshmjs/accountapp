@@ -21,14 +21,15 @@ credit.get("/", async(req,res)=>{
 })
 
 credit.get("/id", async(req,res)=>{
-    const data = await creditSchema.findOne({_id:req.query.id});   
+    const data = await creditSchema.findById({_id:req.query.id});   
     res.json(data)
 })
 
-// credit.get("/amount", async(req,res)=>{
-//     const data = await creditSchema.findOne({reason:req.query.reason});
-//     res.json(data)
-// })
+credit.delete("/", async(req,res)=>{
+    const data = await creditSchema.deleteOne({_id:req.query.id});   
+    res.json(data)
+})
+
 
 module.exports = credit;
  
