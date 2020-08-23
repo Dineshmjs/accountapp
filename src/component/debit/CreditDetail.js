@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import { http } from '../../axios'
 import { Link } from 'react-router-dom'
-import { creditDelete } from '../../redux/Action'
+import { creditDelete, Edit } from '../../redux/Action'
 
 function CreditDetail() {
     const id = useSelector(state => state.creditId)
@@ -53,7 +53,7 @@ function CreditDetail() {
                     <div className="col-2">{credit.availableAmount}</div>
                     <div className="col-2">
                         <Link to="/edit">
-                            <i className="material-icons w3-text-danger w3-small">border_color </i>
+                            <i className="material-icons w3-text-danger w3-small" onClick={()=>dispatch(Edit("credit"))}>border_color </i>
                         </Link>
                     </div>
                     <div className="col-2">

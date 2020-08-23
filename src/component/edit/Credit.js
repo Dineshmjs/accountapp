@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { http } from '../../axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+// import {Link} from 'react-router-dom'
 
 function Credit() {
 
@@ -26,31 +27,34 @@ function Credit() {
     }, [])
 
 
-    const submit = (valuse,props) => {
+    const submit = (valuse, props) => {
         console.log(valuse)
-        http.put("credit",valuse)
-        .then(res=>{
-            console.log(res.data)
-            if(res.data.ok === 1){
-                alert("Success")
-            }
-            if(res.data.ok === 0){
-                alert("update Unsuccess")
-            }
-        })
-        .catch(err=>{
-            console.log(err)
-        })
-        
-        
+        http.put("credit", valuse)
+            .then(res => {
+                console.log(res.data)
+                if (res.data.ok === 1) {
+                    alert("Success")
+                }
+                if (res.data.ok === 0) {
+                    alert("update Unsuccess")
+                }
+            })
+            .catch(err => {
+                console.log(err)
+            })
+
+
     }
 
     const validationSchema = yup.object({
         reason: yup.string().required("Enter valid Reason"),
-        amount: yup.number().moreThan(data.amount - data.availableAmount -1).required("Enter Amount")
+        amount: yup.number().moreThan(data.amount - data.availableAmount - 1).required("Enter Amount")
     })
     return (
         <div>
+            {/* <Link to="/debit">
+                <button className="btn btn-primary">Back</button>
+            </Link> */}
             <div className="card w3-center mb-3">
                 <h5>Update Credit</h5>
             </div>

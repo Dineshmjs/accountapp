@@ -29,6 +29,11 @@ debit.get("/", async (req, res) => {
     res.json(data)
 })
 
+debit.get("/id", async (req, res) => {
+    const data = await debitSchema.findById({ _id: req.query.id });
+    res.json(data)
+})
+
 debit.delete("/", async (req, res) => {
     const data = await debitSchema.deleteOne({ _id: req.query.id });
     const find = await creditSchema.findById({ _id: req.query.creditId })
@@ -36,6 +41,41 @@ debit.delete("/", async (req, res) => {
     const update = await creditSchema.updateOne({ _id: req.query.creditId }, { $set: { availableAmount: av } })
     res.json(data)
     console.log("delete data", data)
+})
+
+debit.put("/", async (req, res) => {
+    const {reason,amount,credit,_id} = req.body
+
+    const prevCredit = await creditSchema.findById({_id:credit})
+    const prevAmount = await debitSchema.findById({_id:_id})
+    
+    if(prevAmount.amount < amount){
+        diff = amount - prevAmount.amount
+        av = prevCredit.availableAmount - diff
+    }
+    if(prevAmount.amount > amount ){
+        diff = prevAmount.amount - amount
+        av = prevCredit.availableAmount + diff
+    }
+    if(prevAmount.amount === amount){
+        av =prevCredit.availableAmount 
+    }
+
+    const updateCredit = await creditSchema.updateOne({_id:credit},{$set:{availableAmount:av}})
+
+    const find ={
+        _id:_id
+    }
+    const update = {
+        $set:{
+            reason:reason,
+            amount:amount,
+            availableAmount:amount
+        }
+    }
+    const updateDebit = await debitSchema.updateOne(find,update) 
+    res.json(updateDebit)
+
 })
 
 

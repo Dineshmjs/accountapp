@@ -4,4 +4,5 @@ export const debitsubmit = "debitsubmit"
 export const debitid = "debitid"
 export const creditdelete = "creditdelete"
 export const debitdelete = "debitdelete"
+export const edit = "edit"
 
