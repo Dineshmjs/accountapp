@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom'
 function ViewSpend() {
     const dispatch = useDispatch()
     const reload = useSelector(state => state)
+    console.log("reload",reload)
     const [data, setData] = useState([])
     const style = {
         paddingTop: "10px",

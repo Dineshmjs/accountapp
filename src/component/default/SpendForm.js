@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { useDispatch } from 'react-redux'
-import { spendSubmit } from '../../redux/Action'
+import { spendSubmit, spendDelete } from '../../redux/Action'
 import { http } from '../../axios'
 
 function SpendForm() {
@@ -22,6 +22,8 @@ function SpendForm() {
             })
         props.resetForm()
         dispatch(spendSubmit(false))
+        dispatch(spendDelete())
+
     }
     const validationSchema = yup.object({
         reason: yup.string().required("Enter reason"),
@@ -36,12 +38,12 @@ function SpendForm() {
             >
                 <Form>
                     <div className="mb-3">
-                        <Field type="text" name="reason" className="form-control" />
+                        <Field type="text" name="reason" className="form-control" placeholder="Enter Reason" />
                         <ErrorMessage name="reason" />
                     </div>
 
                     <div className="mb-3">
-                        <Field type="number" name="amount" className="form-control" />
+                        <Field type="number" name="amount" className="form-control" placeholder="Enter Amount" />
                         <ErrorMessage name="amount" />
                     </div>
 

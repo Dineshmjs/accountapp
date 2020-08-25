@@ -5,6 +5,7 @@ import { useSelector } from 'react-redux'
 function View() {
     const [amount,setAmount] = useState(0)
     const reload = useSelector(state=>state)
+    console.log("reload",reload)
     useEffect(()=>{
         http.get("default")
         .then(res=>{
