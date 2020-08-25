@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom'
 function ViewSpend() {
     const dispatch = useDispatch()
     const reload = useSelector(state => state)
-    console.log("reload",reload)
+    // console.log("reload",reload)
     const [data, setData] = useState([])
     const style = {
         paddingTop: "10px",
@@ -20,18 +20,18 @@ function ViewSpend() {
     const getData = () => {
         http.get("spend")
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 
     const Delete = (deleteId, amount) => {
         http.delete("spend", { params: { id: deleteId, amount: amount } })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.ok === 1) {
                     alert("Deleted Success")
                     dispatch(spendDelete())
@@ -42,7 +42,7 @@ function ViewSpend() {
                 }
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 

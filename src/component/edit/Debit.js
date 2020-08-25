@@ -25,19 +25,19 @@ function Debit() {
     useEffect(() => {
         http.get("debit/id", { params: { id: id } })
             .then(res => {
-                console.log("debit",res.data)
+                // console.log("debit",res.data)
                 setData(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
         http.get("credit/id", { params: { id: creditId } })
             .then(res => {
-                console.log("credit",res.data)
+                // console.log("credit",res.data)
                 setav(res.data.availableAmount)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }, [])
 
@@ -45,11 +45,11 @@ function Debit() {
     const submit = (values, props) => {
         
         //values = {...values,availableAmount:values.amount,creditav:av-values.amount}
-        console.log("submit",values)
+        // console.log("submit",values)
 
         http.put("debit", values)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.ok === 1) {
                     alert("Success")
                 }
@@ -58,7 +58,7 @@ function Debit() {
                 }
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 

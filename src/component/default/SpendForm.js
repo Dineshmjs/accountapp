@@ -12,13 +12,13 @@ function SpendForm() {
         amount: ""
     }
     const submit = (values, props) => {
-        console.log("subit spend",values)
+        // console.log("subit spend",values)
         http.post("spend", values)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
         props.resetForm()
         dispatch(spendSubmit(false))

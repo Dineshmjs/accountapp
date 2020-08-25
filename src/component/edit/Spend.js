@@ -21,11 +21,11 @@ function Spend() {
     useEffect(() => {
         http.get("spend/id", { params: { id: id } })
             .then(res => {
-                console.log("debit",res.data)
+                // console.log("debit",res.data)
                 setData(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
         
     }, [])
@@ -33,11 +33,11 @@ function Spend() {
 
     const submit = (values, props) => {
        
-        console.log("submit",values)
+        // console.log("submit",values)
 
         http.put("spend", values)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.ok === 1) {
                     alert("Success")
                 }
@@ -46,7 +46,7 @@ function Spend() {
                 }
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 

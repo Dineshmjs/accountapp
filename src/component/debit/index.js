@@ -10,7 +10,7 @@ import BackButton from '../BackButton'
 function Debit() {
     const id = useSelector(state=>state.creditId)
     const hide = useSelector(state=>state.debitSubmit)    
-    console.log("creditId",id,hide)
+    // console.log("creditId",id,hide)
     return (
         <div>
             <BackButton path="/" title="Debit" color="w3-indigo" />

@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux'
 
 function Edit() {
     const edit = useSelector(state => state.edit)
-    console.log("edit", edit)
+    // console.log("edit", edit)
     return (
         <div>
             {edit === "credit" && <Credit />}

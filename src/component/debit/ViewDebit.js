@@ -22,11 +22,11 @@ function ViewDebit() {
     const getData = () => {
         http.get("debit", { params: { id: id } })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 
@@ -43,7 +43,7 @@ function ViewDebit() {
     const Delete = (deleteId, amount) => {
         http.delete("debit", { params: { id: deleteId, amount: amount, creditId: id } })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.ok === 1) {
                     alert("Deleted Success")
                     dispatch(debitDelete())
@@ -54,7 +54,7 @@ function ViewDebit() {
                 }
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 
