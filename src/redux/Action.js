@@ -1,4 +1,4 @@
-import {creditsubmit, creditid, debitsubmit, debitid, debitdelete, creditdelete, edit} from './Type';
+import {creditsubmit, creditid, debitsubmit, debitid, debitdelete, creditdelete, edit, spendsubmit, spendid, spenddelete} from './Type';
 
 export const creditSubmit = (data) =>{
     return{
@@ -32,6 +32,8 @@ export const debitId = (data) =>{
     
 } 
 
+
+
 export const debitDelete = () =>{
     return{
         type:debitdelete        
@@ -51,6 +53,29 @@ export const Edit = (data) =>{
         type:edit,
         data:data   
 
+    }
+    
+} 
+
+export const spendSubmit = (data) =>{
+    return{
+        type:spendsubmit,
+        data:data
+    }
+    
+} 
+
+export const spendId = (data) =>{
+    return{
+        type:spendid,
+        data:data
+    }
+    
+} 
+
+export const spendDelete = () =>{
+    return{
+        type:spenddelete        
     }
     
 } 

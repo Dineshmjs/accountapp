@@ -3,12 +3,16 @@ import DefaultDetails from './DefaultDetails'
 import SpendForm from './SpendForm'
 import ViewSpend from './ViewSpend'
 import SpendButton from './SpendButton'
+import {useSelector} from 'react-redux'
 
 function Default() {
+    const hide = useSelector(state=>state.spendSubmit)
     return (
         <div>
             <DefaultDetails />
-            <SpendForm />
+            {
+                hide && <SpendForm />
+            }            
             <ViewSpend />
             <SpendButton />
         </div>

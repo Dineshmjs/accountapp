@@ -77,23 +77,23 @@ function ViewDebit() {
                                     <Link to="/edit" onClick={() => Dis(data._id)}>
                                         <i className="material-icons w3-text-danger w3-small">border_color </i>
                                     </Link>
-                            </div>
-                            <div className="col-2">
-                                <Link to="/debit" onClick={() => Delete(data._id, data.amount)}>
-                                    <i className="material-icons w3-text-danger w3-small" >delete </i>
-                                </Link>
+                                </div>
+                                <div className="col-2">
+                                    <Link to="/debit" onClick={() => Delete(data._id, data.amount)}>
+                                        <i className="material-icons w3-text-danger w3-small" >delete </i>
+                                    </Link>
+                                </div>
                             </div>
                         </div>
-                        </div>
-    )
-})
+                    )
+                })
             }
-<div className="card w3-center mt-2 mb-2 " style={style} >
-    <div className="row" >
-        <div className="col-6 text-danger">Total</div>
-        <div className="col-6 text-danger">{total}</div>
-    </div>
-</div>
+            <div className="card w3-center mt-2 mb-2 " style={style} >
+                <div className="row" >
+                    <div className="col-6 text-danger">Total</div>
+                    <div className="col-6 text-danger">{total}</div>
+                </div>
+            </div>
         </div >
     )
 }

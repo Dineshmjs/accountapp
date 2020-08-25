@@ -1,15 +1,27 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
+import { useDispatch } from 'react-redux'
+import { spendSubmit } from '../../redux/Action'
+import { http } from '../../axios'
 
 function SpendForm() {
+    const dispatch = useDispatch()
     const initialValues = {
         reason: "",
         amount: ""
     }
     const submit = (values, props) => {
-        console.log(values)
+        console.log("subit spend",values)
+        http.post("spend", values)
+            .then(res => {
+                console.log(res.data)
+            })
+            .catch(err => {
+                console.log(err)
+            })
         props.resetForm()
+        dispatch(spendSubmit(false))
     }
     const validationSchema = yup.object({
         reason: yup.string().required("Enter reason"),

@@ -1,4 +1,4 @@
-import {creditsubmit,creditid, debitsubmit, debitid, debitdelete, creditdelete, edit} from './Type';
+import {creditsubmit,creditid, debitsubmit, debitid, debitdelete, creditdelete, edit, spendid, spendsubmit, spenddelete} from './Type';
 
 const initialState = {
     creditSubmit:false,
@@ -7,7 +7,12 @@ const initialState = {
     debitId:"",
     debitDelete:0,
     creditDelete:0,
-    edit:""
+    edit:"",
+    spendSubmit:false,
+    spendId:"",
+    spendDelete:0
+
+
 }
 
 const reducer = (state=initialState,action)=>{
@@ -39,6 +44,18 @@ const reducer = (state=initialState,action)=>{
         case edit : return{
             ...state,
             edit:action.data
+        }
+        case spendsubmit : return{
+            ...state,
+            spendSubmit:action.data
+        }
+        case spendid : return{
+            ...state,
+            spendId:action.data
+        }
+        case spenddelete : return{
+            ...state,
+            spendDelete:state.spendDelete + 1
         }
         default :return state
     }
