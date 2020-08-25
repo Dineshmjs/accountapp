@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { http } from '../../axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
+import BackButton from '../BackButton';
 // import {Link} from 'react-router-dom'
 
 function Credit() {
@@ -51,13 +52,9 @@ function Credit() {
         amount: yup.number().moreThan(data.amount - data.availableAmount - 1).required("Enter Amount")
     })
     return (
-        <div>
-            {/* <Link to="/debit">
-                <button className="btn btn-primary">Back</button>
-            </Link> */}
-            <div className="card w3-center mb-3">
-                <h5>Update Credit</h5>
-            </div>
+        <div>   
+            <BackButton path="debit" title="Update Credit" color="w3-purple" />         
+            
             <div className="container">
                 <Formik
                     initialValues={data || initialValues}

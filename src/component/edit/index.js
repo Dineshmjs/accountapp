@@ -8,7 +8,7 @@ function Edit() {
     const edit = useSelector(state => state.edit)
     console.log("edit", edit)
     return (
-        <div className="container">
+        <div>
             {edit === "credit" && <Credit />}
             {edit === "debit" && <Debit />}
             {edit === "spend" && <Spend />}            

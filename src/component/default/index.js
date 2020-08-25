@@ -4,11 +4,13 @@ import SpendForm from './SpendForm'
 import ViewSpend from './ViewSpend'
 import SpendButton from './SpendButton'
 import {useSelector} from 'react-redux'
+import BackButton from '../BackButton'
 
 function Default() {
     const hide = useSelector(state=>state.spendSubmit)
     return (
         <div>
+            <BackButton path="/" title="Default" color="w3-deep-orange" />
             <DefaultDetails />
             {
                 hide && <SpendForm />

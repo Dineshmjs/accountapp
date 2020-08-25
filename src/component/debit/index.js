@@ -4,6 +4,7 @@ import DebitForm from './DebitForm'
 import ViewDebit from './ViewDebit'
 import DebitButton from './DebitButton'
 import CreditDetail from './CreditDetail'
+import BackButton from '../BackButton'
 // import { Link } from 'react-router-dom'
 
 function Debit() {
@@ -12,9 +13,7 @@ function Debit() {
     console.log("creditId",id,hide)
     return (
         <div>
-            {/* <Link to="/">
-                <button className="btn btn-primary">Back</button>
-            </Link> */}
+            <BackButton path="/" title="Debit" color="w3-indigo" />
             <CreditDetail />
             {
                 hide && <DebitForm />

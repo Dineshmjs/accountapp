@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { http } from '../../axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
+import BackButton from '../BackButton';
 // import {Link} from 'react-router-dom'
 
 function Debit() {
@@ -67,13 +68,8 @@ function Debit() {
     })
 
     return (
-        <div>
-            {/* <Link to="/debit">
-                <button className="btn btn-primary">Back</button>
-            </Link> */}
-            <div className="card w3-center mb-3">
-                <h5>Update Credit</h5>
-            </div>
+        <div>            
+            <BackButton path="debit" title="Update Debit" color="w3-pink" />
             <div className="container">
                 <Formik
                     initialValues={data || initialValues}

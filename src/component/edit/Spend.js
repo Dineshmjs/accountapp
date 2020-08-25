@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux'
 import { http } from '../../axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
+import BackButton from '../BackButton';
 
 function Spend() {
    
@@ -56,9 +57,7 @@ function Spend() {
 
     return (
         <div>            
-            <div className="card w3-center mb-3">
-                <h5>Update Credit</h5>
-            </div>
+            <BackButton path="default" title="Update Spend" color="w3-brown" />
             <div className="container">
                 <Formik
                     initialValues={data || initialValues}
