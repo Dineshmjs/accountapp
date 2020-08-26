@@ -3,17 +3,18 @@ import CreditForm from './CreditForm';
 import ViewCredit from './ViewCredit';
 import CreditButton from './CreditButton';
 import {useSelector} from 'react-redux';
+import Load from '../Load';
 
 
 function Credit() {
     const hide = useSelector(state=>state.creditSubmit)    
     return (
         <div>
-            
+             
+             <ViewCredit />          
             {
                 hide && <CreditForm />
-            }            
-            <ViewCredit />
+            } 
             <CreditButton />
         </div>
     )

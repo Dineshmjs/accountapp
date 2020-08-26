@@ -8,7 +8,7 @@ import { debitDelete, debitId, Edit } from '../../redux/Action';
 
 function ViewDebit() {
 
-    var reload = useSelector(state => state.debitSubmit)
+    var reload = useSelector(state => state)
     const id = useSelector(state => state.creditId)
 
     const dispatch = useDispatch()
@@ -17,7 +17,7 @@ function ViewDebit() {
     // const [deleteInfo, setdeleteInfo] = useState("")
     useEffect(() => {
         getData()
-    }, [reload, id])
+    }, [reload])
 
     const getData = () => {
         http.get("debit", { params: { id: id } })

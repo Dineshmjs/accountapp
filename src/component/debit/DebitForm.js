@@ -76,7 +76,7 @@ function CreditForm() {
                         <ErrorMessage name="amount" />
                     </div>
 
-                    <div className="w3-center">
+                    <div className="w3-center mb-3">
                         <button className="btn btn-primary" type="submit" >Submit</button>
                     </div>
 
