@@ -1,7 +1,8 @@
 import React from 'react'
 import Credit from './Credit'
 import Debit from './Debit'
-import Spend from './Spend'
+import Default from './Default'
+import Ddebit from './Ddebit'
 import { useSelector } from 'react-redux'
 
 function Edit() {
@@ -11,7 +12,9 @@ function Edit() {
         <div>
             {edit === "credit" && <Credit />}
             {edit === "debit" && <Debit />}
-            {edit === "spend" && <Spend />}            
+            {edit === "default" && <Default />} 
+            {edit === "ddebit" && <Ddebit />}       
+                       
         </div>
     )
 }

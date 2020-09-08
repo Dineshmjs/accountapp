@@ -1,21 +1,18 @@
 import React from 'react'
-import DefaultDetails from './DefaultDetails'
-import SpendForm from './SpendForm'
-import ViewSpend from './ViewSpend'
-import SpendButton from './SpendButton'
 import {useSelector} from 'react-redux'
-import BackButton from '../BackButton'
+import DefaultForm from './DefaultForm'
+import DefaultButton from './DefaultButton'
+import ViewDefault from './ViewDefault'
 
 function Default() {
-    const hide = useSelector(state=>state.spendSubmit)
+    const hide = useSelector(state=>state.defaultSubmit)
     return (
         <div>            
-            <DefaultDetails />
             {
-                hide && <SpendForm />
+                hide && <DefaultForm />
             }            
-            <ViewSpend />
-            <SpendButton />
+            <ViewDefault />
+            <DefaultButton />
         </div>
     )
 }
