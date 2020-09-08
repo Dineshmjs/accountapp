@@ -1,14 +1,14 @@
 import React from 'react'
 import Header from './Header';
-import Credit from './Credit'
-import ViewDefault from './default/ViewDefault'
+import Menu from './Menu'
+import Body from './Body'
 
 function Main() {
     return (
         <div>
             <Header /> 
-            <ViewDefault /> 
-            <Credit />          
+            <Menu />   
+            <Body />                
         </div>
     )
 }
