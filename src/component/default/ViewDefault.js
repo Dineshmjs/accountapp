@@ -32,7 +32,7 @@ function ViewDefault() {
         <div className="container">
             {
                 data.map(data =>
-                    <Link to="/defaultDebit" key={data._id} style={decoration}>
+                    <Link to="/ddebit" key={data._id} style={decoration}>
                         <div className="card w3-center mt-2 mb-2 " style={style} onClick={()=>dispatch(defaultId(data._id))}>
                             <div className="row" >
                                 <div className="col-8">{data.reason}</div>                                

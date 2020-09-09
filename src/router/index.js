@@ -16,8 +16,7 @@ function index() {
                 <Route exact path = "/debit" component={Debit} />
                 <Route exact path = "/ddebit" component={Ddebit} />
                 <Route exact path = "/edit" component={Edit} />                      
-                <Route exact path = "/view" component={View} />
-                             
+                <Route exact path = "/view" component={View} />                             
             </Switch>
         </BrowserRouter>
     )
