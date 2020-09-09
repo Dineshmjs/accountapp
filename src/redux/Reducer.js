@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import {creditsubmit,creditid, debitsubmit, debitid, debitdelete, creditdelete, edit, spendid, spendsubmit, spenddelete, load} from './Type';
-=======
 import {creditsubmit,creditid, debitsubmit, debitid, debitdelete, creditdelete, edit, spendid, spendsubmit, spenddelete, menu, defaultsubmit, defaultid, defaultdelete} from './Type';
->>>>>>> 1bcd86d8da2f49e4086e4f72dde9a7f04a29ac56
 
 const initialState = {
     creditSubmit:false,
@@ -21,11 +17,7 @@ const initialState = {
     spendSubmit:false,
     spendId:"",
     spendDelete:0,
-<<<<<<< HEAD
-    load:0
-=======
     menu:"wi"
->>>>>>> 1bcd86d8da2f49e4086e4f72dde9a7f04a29ac56
 
 
 }
@@ -86,15 +78,9 @@ const reducer = (state=initialState,action)=>{
             ...state,
             spendDelete:state.spendDelete + 1
         }
-<<<<<<< HEAD
-        case load : return{
-            ...state,
-            load:state.load + 1
-=======
         case menu : return{
             ...state,
             menu:action.data
->>>>>>> 1bcd86d8da2f49e4086e4f72dde9a7f04a29ac56
         }
         default :return state
     }
