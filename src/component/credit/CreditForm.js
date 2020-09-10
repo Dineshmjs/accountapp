@@ -15,13 +15,13 @@ function CreditForm() {
     }
 
     const submit = (values, formProps) => {
-        console.log("form values", values)
+        //console.log("form values", values)
         http.post('credit', values)
             .then(res => {
-                console.log(res.data)
+                //console.log(res.data)
             })
             .catch(err => {
-                console.log(err)
+                //console.log(err)
             })
 
         formProps.resetForm();
@@ -32,7 +32,7 @@ function CreditForm() {
     }
 
     const dis = () =>{
-        console.log("dispatch")
+        //console.log("dispatch")
         dispatch(creditSubmit(false))
     }
 

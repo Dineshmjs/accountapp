@@ -10,9 +10,9 @@ function CreditForm() {
     const id = useSelector(state=>state.creditId)
     const reload = useSelector(state => state.debitSubmit)
     const [av,setav] = useState("")
-    console.log(av)
+    // console.log(av)
     const dispatch = useDispatch();
-    console.log(id)
+    // console.log(id)
 
 
     const initialValue = {
@@ -24,22 +24,22 @@ function CreditForm() {
     useEffect(() => {
         http.get("credit/id",{params:{id:id}})
             .then(res => {
-                console.log("av",res.data)
+                // console.log("av",res.data)
                 setav(res.data.availableAmount)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }, [reload, id])
 
     const submit = (values, formProps) => {
-        console.log("form values", values)
+        // console.log("form values", values)
         http.post('debit', values)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
 
         formProps.resetForm();
@@ -49,7 +49,7 @@ function CreditForm() {
     }
 
     const dis = () =>{
-        console.log("dispatch")
+        // console.log("dispatch")
         dispatch(debitSubmit(false))
     }
 
@@ -76,7 +76,7 @@ function CreditForm() {
                         <ErrorMessage name="amount" />
                     </div>
 
-                    <div className="w3-center">
+                    <div className="w3-center mb-3">
                         <button className="btn btn-primary" type="submit" >Submit</button>
                     </div>
 

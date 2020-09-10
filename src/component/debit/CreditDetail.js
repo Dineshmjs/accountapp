@@ -22,22 +22,22 @@ function CreditDetail() {
     useEffect(() => {
         http.get("credit/id", { params: { id: id } })
             .then(res => {
-                console.log(res.data)
+                //console.log(res.data)
                 setcredit(res.data)
             })
             .catch(err => {
-                console.log(err)
+                //console.log(err)
             })
     }, [reload, id])
 
     const Delete = () => {
         http.delete("credit", { params: { id: id } })
             .then(res => {
-                console.log(res.data)
+                //console.log(res.data)
 
             })
             .catch(err => {
-                console.log(err)
+                //console.log(err)
             })
         dispatch(creditDelete())    
     }

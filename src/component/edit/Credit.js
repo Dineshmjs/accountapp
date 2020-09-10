@@ -19,20 +19,20 @@ function Credit() {
     useEffect(() => {
         http.get("credit/id", { params: { id: id } })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }, [])
 
 
     const submit = (valuse, props) => {
-        console.log(valuse)
+        // console.log(valuse)
         http.put("credit", valuse)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.ok === 1) {
                     alert("Success")
                 }
@@ -41,7 +41,7 @@ function Credit() {
                 }
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
 
 

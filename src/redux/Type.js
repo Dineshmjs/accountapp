@@ -24,3 +24,5 @@ export const menu = "menu"
 
 
 
+export const load = "load"
+

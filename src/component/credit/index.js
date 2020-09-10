@@ -8,12 +8,11 @@ import {useSelector} from 'react-redux';
 function Credit() {
     const hide = useSelector(state=>state.creditSubmit)    
     return (
-        <div>
-            
+        <div>             
+             <ViewCredit />          
             {
                 hide && <CreditForm />
-            }            
-            <ViewCredit />
+            } 
             <CreditButton />
         </div>
     )

@@ -2,7 +2,7 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup'
 import { useDispatch } from 'react-redux'
-import { spendSubmit, spendDelete } from '../../redux/Action'
+import { spendSubmit, spendDelete} from '../../redux/Action'
 import { http } from '../../axios'
 
 function SpendForm() {
@@ -12,17 +12,18 @@ function SpendForm() {
         amount: ""
     }
     const submit = (values, props) => {
-        console.log("subit spend",values)
+        // console.log("subit spend",values)
         http.post("spend", values)
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
         props.resetForm()
         dispatch(spendSubmit(false))
         dispatch(spendDelete())
+        
 
     }
     const validationSchema = yup.object({

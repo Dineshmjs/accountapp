@@ -8,7 +8,7 @@ import { debitDelete, debitId, Edit } from '../../redux/Action';
 
 function ViewDebit() {
 
-    var reload = useSelector(state => state.debitSubmit)
+    var reload = useSelector(state => state)
     const id = useSelector(state => state.creditId)
 
     const dispatch = useDispatch()
@@ -17,16 +17,16 @@ function ViewDebit() {
     // const [deleteInfo, setdeleteInfo] = useState("")
     useEffect(() => {
         getData()
-    }, [reload, id])
+    }, [reload])
 
     const getData = () => {
         http.get("debit", { params: { id: id } })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 setData(res.data)
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 
@@ -43,7 +43,7 @@ function ViewDebit() {
     const Delete = (deleteId, amount) => {
         http.delete("debit", { params: { id: deleteId, amount: amount, creditId: id } })
             .then(res => {
-                console.log(res.data)
+                // console.log(res.data)
                 if (res.data.ok === 1) {
                     alert("Deleted Success")
                     dispatch(debitDelete())
@@ -54,7 +54,7 @@ function ViewDebit() {
                 }
             })
             .catch(err => {
-                console.log(err)
+                // console.log(err)
             })
     }
 
