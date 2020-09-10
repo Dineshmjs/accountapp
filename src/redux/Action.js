@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-import {creditsubmit, creditid, debitsubmit, debitid, debitdelete, ddebitsubmit, ddebitid, ddebitdelete, creditdelete, edit, spendsubmit, spendid, spenddelete, menu, defaultsubmit, defaultid, defaultdelete} from './Type';
-=======
-import {creditsubmit, creditid, debitsubmit, debitid, debitdelete, creditdelete, edit, spendsubmit, spendid, spenddelete, menu, defaultsubmit, defaultid, defaultdelete,load} from './Type';
->>>>>>> 7643ceeddb53b81b8ae84bcf194aeb467a0d7401
+import {creditsubmit, creditid, debitsubmit, debitid, debitdelete, ddebitsubmit, ddebitid, ddebitdelete, creditdelete, edit, spendsubmit, spendid, spenddelete, menu, defaultsubmit, defaultid, defaultdelete,load} from './Type';
 
 export const creditSubmit = (data) =>{
     return{
