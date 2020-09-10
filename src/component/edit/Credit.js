@@ -4,6 +4,8 @@ import { http } from '../../axios';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as yup from 'yup';
 import BackButton from '../BackButton';
+import Menu from './Menu'
+import AddMoney from './AddMoney';
 // import {Link} from 'react-router-dom'
 
 function Credit() {
@@ -53,7 +55,9 @@ function Credit() {
     })
     return (
         <div>   
-            <BackButton path="debit" title="Update Credit" color="w3-purple" />         
+            <BackButton path="debit" title="Update Credit" color="w3-purple" />      
+            <Menu />   
+            <AddMoney />
             
             <div className="container">
                 <Formik

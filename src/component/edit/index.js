@@ -4,12 +4,13 @@ import Debit from './Debit'
 import Default from './Default'
 import Ddebit from './Ddebit'
 import { useSelector } from 'react-redux'
+import Menu from './Menu'
 
 function Edit() {
     const edit = useSelector(state => state.edit)
     // console.log("edit", edit)
     return (
-        <div>
+        <div>           
             {edit === "credit" && <Credit />}
             {edit === "debit" && <Debit />}
             {edit === "default" && <Default />} 
