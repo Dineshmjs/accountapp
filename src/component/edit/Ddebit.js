@@ -8,7 +8,7 @@ import BackButton from '../BackButton';
 
 function Ddebit() {
     const id = useSelector(state => state.ddebitId)
-    const defaultId = useSelector(state => state.defaultId)   
+    // const defaultId = useSelector(state => state.defaultId)   
 
 
     const initialValues = {
@@ -28,14 +28,13 @@ function Ddebit() {
             .catch(err => {
                 console.log(err)
             })
-        http.get("default/id", { params: { id: defaultId } })
-            .then(res => {
-                console.log("default",res.data)
-                
-            })
-            .catch(err => {
-                console.log(err)
-            })
+        // http.get("default/id", { params: { id: defaultId } })
+        //     .then(res => {
+        //         console.log("default",res.data)                
+        //     })
+        //     .catch(err => {
+        //         console.log(err)
+        //     })
     }, [])
 
 
@@ -60,7 +59,7 @@ function Ddebit() {
     }
 
     const validationSchema = yup.object({
-        reason: yup.string().required("Enter valid Reason"),
+        reason: yup.string().required("Enter Valid Reason"),
         amount: yup.number().required("Enter Amount")
     })
 
@@ -76,11 +75,11 @@ function Ddebit() {
                 >
                     <Form>
                         <div>
-                            <Field type="text" name="reason" className="mb-2 ml-2 form-control" />
+                            <Field type="text" name="reason" className="mb-2 ml-2 form-control" placeholder="Enter Valid Reason" />
                             <ErrorMessage name="reason" />
                         </div>
                         <div>
-                            <Field type="number" name="amount" className="mb-2 ml-2 form-control" />
+                            <Field type="number" name="amount" className="mb-2 ml-2 form-control" placeholder="Enter Valid Amount" />
                             <ErrorMessage name="amount" />
                         </div>
                         <div className="w3-center">

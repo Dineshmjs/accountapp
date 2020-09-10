@@ -8,8 +8,8 @@ import BackButton from '../BackButton'
 // import { Link } from 'react-router-dom'
 
 function Debit() {
-    const id = useSelector(state=>state.creditId)
-    const hide = useSelector(state=>state.debitSubmit)    
+    const id = useSelector(state=>state.defaultId)
+    const hide = useSelector(state=>state.ddebitSubmit)    
     console.log("creditId",id,hide)
     return (
         <div>

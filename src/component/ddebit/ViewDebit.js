@@ -41,7 +41,7 @@ function ViewDebit() {
     var total = 0;
 
     const Delete = (deleteId, amount) => {
-        http.delete("ddebit", { params: { id: deleteId, defaultId: id } })
+        http.delete("ddebit", { params: { id: deleteId, defaultId: id, amount : amount } })
             .then(res => {
                 console.log(res.data)
                 if (res.data.ok === 1) {
@@ -79,7 +79,7 @@ function ViewDebit() {
                                     </Link>
                                 </div>
                                 <div className="col-2">
-                                    <Link to="/ddebit" onClick={() => Delete(data._id)}>
+                                    <Link to="/ddebit" onClick={() => Delete(data._id,data.amount)}>
                                         <i className="material-icons w3-text-danger w3-small" >delete </i>
                                     </Link>
                                 </div>
@@ -90,8 +90,8 @@ function ViewDebit() {
             }
             <div className="card w3-center mt-2 mb-2 " style={style} >
                 <div className="row" >
-                    <div className="col-6 text-danger">Total</div>
-                    <div className="col-6 text-danger">{total}</div>
+                    <div className="col-4 text-danger">Total</div>
+                    <div className="col-4 text-danger">{total}</div>
                 </div>
             </div>
         </div >

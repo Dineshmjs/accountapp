@@ -8,7 +8,8 @@ import { ddebitSubmit } from '../../redux/Action'
 function DebitForm() {
 
     const id = useSelector(state=>state.defaultId)
-    const reload = useSelector(state => state.ddebitSubmit)    
+    const reload = useSelector(state => state.ddebitSubmit)   
+     
    
     const dispatch = useDispatch();
     console.log(id)

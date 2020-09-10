@@ -90,8 +90,8 @@ function ViewDebit() {
             }
             <div className="card w3-center mt-2 mb-2 " style={style} >
                 <div className="row" >
-                    <div className="col-6 text-danger">Total</div>
-                    <div className="col-6 text-danger">{total}</div>
+                    <div className="col-4 text-danger">Total</div>
+                    <div className="col-4 text-danger">{total}</div>                    
                 </div>
             </div>
         </div >
