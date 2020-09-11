@@ -1,0 +1,23 @@
+[{
+  "_id": {
+    "$oid": "5f4f136482ec180024d42b9a"
+  },
+  "reason": "House Usage",
+  "amount": 1000,
+  "availableAmount": 48,
+  "date": {
+    "$date": "2020-09-02T03:37:08.493Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dc6ee45cd20024d5366c"
+  },
+  "reason": "Tech Port",
+  "amount": 10000,
+  "availableAmount": 1222,
+  "date": {
+    "$date": "2020-09-03T12:07:10.383Z"
+  },
+  "__v": 0
+}]

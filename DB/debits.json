@@ -1,0 +1,673 @@
+[{
+  "_id": {
+    "$oid": "5f412b262818720024508a32"
+  },
+  "credit": "5f40a993430a8c002421d30f",
+  "reason": "Mjs",
+  "amount": 6000,
+  "availableAmount": 6000,
+  "date": {
+    "$date": "2020-08-22T14:26:46.417Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f414790cee3d70024d880ce"
+  },
+  "credit": "5f41477ccee3d70024d880cd",
+  "reason": "Steel",
+  "amount": 10000,
+  "availableAmount": 10000,
+  "date": {
+    "$date": "2020-08-22T16:28:00.610Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4147cccee3d70024d880cf"
+  },
+  "credit": "5f41477ccee3d70024d880cd",
+  "reason": "Paint",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-22T16:29:00.200Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4147e2cee3d70024d880d0"
+  },
+  "credit": "5f41477ccee3d70024d880cd",
+  "reason": "Bolds",
+  "amount": 800,
+  "availableAmount": 800,
+  "date": {
+    "$date": "2020-08-22T16:29:22.130Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f42065614d93c002413ce4e"
+  },
+  "credit": "5f42064214d93c002413ce4d",
+  "reason": "Hg",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-23T06:01:58.402Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f426735c1ab710024497e45"
+  },
+  "credit": "5f41477ccee3d70024d880cd",
+  "reason": "Mjs",
+  "amount": 9000,
+  "availableAmount": 9000,
+  "date": {
+    "$date": "2020-08-23T12:55:17.917Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4267eec1ab710024497e48"
+  },
+  "credit": "5f4267bbc1ab710024497e46",
+  "reason": "Petrol",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-23T12:58:22.609Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f429d9bda23060024b3823d"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "Petrol",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-23T16:47:23.679Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f429dd7da23060024b3823e"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "Purches",
+  "amount": 500,
+  "availableAmount": 500,
+  "date": {
+    "$date": "2020-08-23T16:48:23.379Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f429de8da23060024b3823f"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "Snaks",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-23T16:48:40.421Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f429e34da23060024b38240"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "Travel",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-23T16:49:56.848Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f43ae38421f8d002481a998"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "S",
+  "amount": 1,
+  "availableAmount": 1,
+  "date": {
+    "$date": "2020-08-24T12:10:32.796Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f43ae4d421f8d002481a999"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "D",
+  "amount": 1,
+  "availableAmount": 1,
+  "date": {
+    "$date": "2020-08-24T12:10:53.309Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f43af4b421f8d002481a99a"
+  },
+  "credit": "5f429a7cda23060024b3823b",
+  "reason": "M",
+  "amount": 20,
+  "availableAmount": 20,
+  "date": {
+    "$date": "2020-08-24T12:15:07.906Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f44c72e9117c20024f0961a"
+  },
+  "credit": "5f44c7249117c20024f09619",
+  "reason": "Din",
+  "amount": 100,
+  "availableAmount": 100,
+  "date": {
+    "$date": "2020-08-25T08:09:18.706Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f44cbdc9117c20024f0961d"
+  },
+  "credit": "5f44cb949117c20024f0961c",
+  "reason": "Mjs",
+  "amount": 100,
+  "availableAmount": 100,
+  "date": {
+    "$date": "2020-08-25T08:29:16.398Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f451233cc68930024adfe4f"
+  },
+  "credit": "5f44f04ecd534e002494a5a7",
+  "reason": "Dinesh",
+  "amount": 300,
+  "availableAmount": 300,
+  "date": {
+    "$date": "2020-08-25T13:29:23.454Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4680f85d37e900246fcb43"
+  },
+  "credit": "5f44f04ecd534e002494a5a7",
+  "reason": "Mjs",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-08-26T15:34:16.467Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4681045d37e900246fcb44"
+  },
+  "credit": "5f44f04ecd534e002494a5a7",
+  "reason": "Monho",
+  "amount": 600,
+  "availableAmount": 600,
+  "date": {
+    "$date": "2020-08-26T15:34:28.020Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4f53ca944ede0024cf52ce"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Lunch",
+  "amount": 60,
+  "availableAmount": 60,
+  "date": {
+    "$date": "2020-09-02T08:11:54.315Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4fc4bece021f00244d04f5"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Milk",
+  "amount": 14,
+  "availableAmount": 14,
+  "date": {
+    "$date": "2020-09-02T16:13:50.363Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4fc4c8ce021f00244d04f6"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Magi",
+  "amount": 46,
+  "availableAmount": 46,
+  "date": {
+    "$date": "2020-09-02T16:14:00.581Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f4fc4d3ce021f00244d04f7"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Egg",
+  "amount": 20,
+  "availableAmount": 20,
+  "date": {
+    "$date": "2020-09-02T16:14:11.132Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f509c8f5ffa2c0024867e80"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Lunch",
+  "amount": 80,
+  "availableAmount": 80,
+  "date": {
+    "$date": "2020-09-03T07:34:39.104Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f509c9c5ffa2c0024867e81"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Petrol",
+  "amount": 100,
+  "availableAmount": 100,
+  "date": {
+    "$date": "2020-09-03T07:34:52.232Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dcb9e45cd20024d5366d"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Leather Case 35*38",
+  "amount": 1330,
+  "availableAmount": 1330,
+  "date": {
+    "$date": "2020-09-03T12:08:25.197Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dcdce45cd20024d5366e"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Soft Case 17*30",
+  "amount": 510,
+  "availableAmount": 510,
+  "date": {
+    "$date": "2020-09-03T12:09:00.787Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dcfce45cd20024d5366f"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Boom TPU 21*15",
+  "amount": 315,
+  "availableAmount": 315,
+  "date": {
+    "$date": "2020-09-03T12:09:32.010Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dd43e45cd20024d53670"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "RB 151 Charger 5*90",
+  "amount": 450,
+  "availableAmount": 450,
+  "date": {
+    "$date": "2020-09-03T12:10:43.918Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dd67e45cd20024d53671"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "RB 177 Charger 1*140",
+  "amount": 140,
+  "availableAmount": 140,
+  "date": {
+    "$date": "2020-09-03T12:11:19.209Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dd97e45cd20024d53672"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "RBT Charger 2*35",
+  "amount": 70,
+  "availableAmount": 70,
+  "date": {
+    "$date": "2020-09-03T12:12:07.263Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50ddb6e45cd20024d53673"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Realme Poly 5*50",
+  "amount": 250,
+  "availableAmount": 250,
+  "date": {
+    "$date": "2020-09-03T12:12:38.949Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dddae45cd20024d53674"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "RBT 21 h/f 5*30",
+  "amount": 150,
+  "availableAmount": 150,
+  "date": {
+    "$date": "2020-09-03T12:13:14.873Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50de10e45cd20024d53675"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "RB 32 h/f 5*40",
+  "amount": 200,
+  "availableAmount": 200,
+  "date": {
+    "$date": "2020-09-03T12:14:08.616Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50de34e45cd20024d53676"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "RB 05 h/f 5*45",
+  "amount": 225,
+  "availableAmount": 225,
+  "date": {
+    "$date": "2020-09-03T12:14:44.116Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50de57e45cd20024d53677"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Super Glass 44*43",
+  "amount": 1892,
+  "availableAmount": 1892,
+  "date": {
+    "$date": "2020-09-03T12:15:19.658Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50de74e45cd20024d53678"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "3mm Glass 71*11",
+  "amount": 781,
+  "availableAmount": 781,
+  "date": {
+    "$date": "2020-09-03T12:15:48.414Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50de91e45cd20024d53679"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "IPA Bottle 1*50",
+  "amount": 50,
+  "availableAmount": 50,
+  "date": {
+    "$date": "2020-09-03T12:16:17.328Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50dea9e45cd20024d5367a"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "LCD Cleaner 1*80",
+  "amount": 80,
+  "availableAmount": 80,
+  "date": {
+    "$date": "2020-09-03T12:16:41.411Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50decde45cd20024d5367b"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "VGA to HDMI 1*150",
+  "amount": 150,
+  "availableAmount": 150,
+  "date": {
+    "$date": "2020-09-03T12:17:17.064Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50defee45cd20024d5367c"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "V8 OTG 15*20",
+  "amount": 300,
+  "availableAmount": 300,
+  "date": {
+    "$date": "2020-09-03T12:18:06.335Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50df24e45cd20024d5367d"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "C Type OTG 10*30",
+  "amount": 300,
+  "availableAmount": 300,
+  "date": {
+    "$date": "2020-09-03T12:18:44.732Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f50e278e45cd20024d5367e"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Banner Sheet",
+  "amount": 450,
+  "availableAmount": 450,
+  "date": {
+    "$date": "2020-09-03T12:32:56.249Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f51059e440da50024e04d0b"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Mavu",
+  "amount": 20,
+  "availableAmount": 20,
+  "date": {
+    "$date": "2020-09-03T15:02:54.959Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f5105a8440da50024e04d0c"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Idli podi",
+  "amount": 20,
+  "availableAmount": 20,
+  "date": {
+    "$date": "2020-09-03T15:03:04.887Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f5114ff9a795e002401927b"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "petrol ",
+  "amount": 100,
+  "availableAmount": 100,
+  "date": {
+    "$date": "2020-09-03T16:08:31.363Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f519b5f55a86800241bc6e6"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Website techport Domain",
+  "amount": 85,
+  "availableAmount": 85,
+  "date": {
+    "$date": "2020-09-04T01:41:51.776Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f51cb2e91bd0d0024990605"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Water",
+  "amount": 30,
+  "availableAmount": 30,
+  "date": {
+    "$date": "2020-09-04T05:05:50.208Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f51cb4a91bd0d0024990606"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Poojai",
+  "amount": 90,
+  "availableAmount": 90,
+  "date": {
+    "$date": "2020-09-04T05:06:18.322Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f51cb6e91bd0d0024990607"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Bread and jam",
+  "amount": 60,
+  "availableAmount": 60,
+  "date": {
+    "$date": "2020-09-04T05:06:54.478Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f52068ebca849002453194c"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Lunch",
+  "amount": 90,
+  "availableAmount": 90,
+  "date": {
+    "$date": "2020-09-04T09:19:10.253Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f52196d2b4083002431cb35"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Banner Channel",
+  "amount": 750,
+  "availableAmount": 750,
+  "date": {
+    "$date": "2020-09-04T10:39:41.037Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f52e32cf79e1700243dd2c2"
+  },
+  "credit": "5f50dc6ee45cd20024d5366c",
+  "reason": "Gum",
+  "amount": 300,
+  "availableAmount": 300,
+  "date": {
+    "$date": "2020-09-05T01:00:28.522Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f5300f51b7f290024965e39"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "knife",
+  "amount": 62,
+  "availableAmount": 62,
+  "date": {
+    "$date": "2020-09-05T03:07:33.392Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f53012c1b7f290024965e3a"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "bread,jam,itali mau",
+  "amount": 80,
+  "availableAmount": 80,
+  "date": {
+    "$date": "2020-09-05T03:08:28.409Z"
+  },
+  "__v": 0
+},{
+  "_id": {
+    "$oid": "5f5514e7fdff280024750e5d"
+  },
+  "credit": "5f4f136482ec180024d42b9a",
+  "reason": "Head Phone Sale",
+  "amount": 40,
+  "availableAmount": 40,
+  "date": {
+    "$date": "2020-09-06T16:57:11.273Z"
+  },
+  "__v": 0
+}]

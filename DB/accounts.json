@@ -1,0 +1,257 @@
+[{
+  "_id": {
+    "$oid": "5f3d469c50fb5c002490482d"
+  },
+  "reason": "Load",
+  "name": "Mjs",
+  "amount": 3000,
+  "availableAmount": 3000,
+  "date": {
+    "$date": "2020-08-19T15:34:52.283Z"
+  },
+  "debit": [
+    {
+      "_id": {
+        "$oid": "5f3d46a650fb5c002490482e"
+      },
+      "reason": "Tol",
+      "amount": 36,
+      "availableAmount": 36,
+      "date": {
+        "$date": "2020-08-19T15:35:02.114Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46ac50fb5c002490482f"
+      },
+      "reason": "Llo",
+      "amount": 36,
+      "availableAmount": 36,
+      "date": {
+        "$date": "2020-08-19T15:35:08.167Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46b350fb5c0024904830"
+      },
+      "reason": "Lopp",
+      "amount": 369,
+      "availableAmount": 369,
+      "date": {
+        "$date": "2020-08-19T15:35:15.362Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46bb50fb5c0024904831"
+      },
+      "reason": "Boof",
+      "amount": 325,
+      "availableAmount": 325,
+      "date": {
+        "$date": "2020-08-19T15:35:23.236Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46c750fb5c0024904832"
+      },
+      "reason": "Ghj",
+      "amount": 399,
+      "availableAmount": 399,
+      "date": {
+        "$date": "2020-08-19T15:35:35.517Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46cb50fb5c0024904833"
+      },
+      "reason": "Fty",
+      "amount": 63,
+      "availableAmount": 63,
+      "date": {
+        "$date": "2020-08-19T15:35:39.171Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46d050fb5c0024904834"
+      },
+      "reason": "Tyyh",
+      "amount": 582,
+      "availableAmount": 582,
+      "date": {
+        "$date": "2020-08-19T15:35:44.184Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46d550fb5c0024904835"
+      },
+      "reason": "Rrt",
+      "amount": 52,
+      "availableAmount": 52,
+      "date": {
+        "$date": "2020-08-19T15:35:49.235Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46db50fb5c0024904836"
+      },
+      "reason": "Gh",
+      "amount": 25,
+      "availableAmount": 25,
+      "date": {
+        "$date": "2020-08-19T15:35:55.211Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46e050fb5c0024904837"
+      },
+      "reason": "Rt",
+      "amount": 525,
+      "availableAmount": 525,
+      "date": {
+        "$date": "2020-08-19T15:36:00.653Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46e450fb5c0024904838"
+      },
+      "reason": "F",
+      "amount": 93,
+      "availableAmount": 93,
+      "date": {
+        "$date": "2020-08-19T15:36:04.930Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46ea50fb5c0024904839"
+      },
+      "reason": "Rt",
+      "amount": 58,
+      "availableAmount": 58,
+      "date": {
+        "$date": "2020-08-19T15:36:10.805Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d46ef50fb5c002490483a"
+      },
+      "reason": "Dr",
+      "amount": 88,
+      "availableAmount": 88,
+      "date": {
+        "$date": "2020-08-19T15:36:15.050Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d471b50fb5c002490483b"
+      },
+      "reason": ",j",
+      "amount": 8,
+      "availableAmount": 8,
+      "date": {
+        "$date": "2020-08-19T15:36:59.792Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d472050fb5c002490483c"
+      },
+      "reason": "jj",
+      "amount": 89,
+      "availableAmount": 89,
+      "date": {
+        "$date": "2020-08-19T15:37:04.065Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d472550fb5c002490483d"
+      },
+      "reason": "kk",
+      "amount": 89,
+      "availableAmount": 89,
+      "date": {
+        "$date": "2020-08-19T15:37:09.561Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d473450fb5c002490483e"
+      },
+      "reason": "lo",
+      "amount": 88,
+      "availableAmount": 88,
+      "date": {
+        "$date": "2020-08-19T15:37:24.564Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d473e50fb5c002490483f"
+      },
+      "reason": "oo",
+      "amount": 9,
+      "availableAmount": 9,
+      "date": {
+        "$date": "2020-08-19T15:37:34.161Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d474650fb5c0024904840"
+      },
+      "reason": "pp",
+      "amount": 89,
+      "availableAmount": 89,
+      "date": {
+        "$date": "2020-08-19T15:37:42.143Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d476450fb5c0024904841"
+      },
+      "reason": "ii",
+      "amount": 89,
+      "availableAmount": 89,
+      "date": {
+        "$date": "2020-08-19T15:38:12.136Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d476b50fb5c0024904842"
+      },
+      "reason": "mm",
+      "amount": 90,
+      "availableAmount": 90,
+      "date": {
+        "$date": "2020-08-19T15:38:19.146Z"
+      }
+    },
+    {
+      "_id": {
+        "$oid": "5f3d477750fb5c0024904843"
+      },
+      "reason": "Ghh",
+      "amount": 36,
+      "availableAmount": 36,
+      "date": {
+        "$date": "2020-08-19T15:38:31.736Z"
+      }
+    }
+  ],
+  "__v": 0
+}]
