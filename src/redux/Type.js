@@ -22,7 +22,7 @@ export const edit = "edit"
 
 export const menu = "menu"
 
-
-
 export const load = "load"
+
+export const editmenu = "editmenu"
 

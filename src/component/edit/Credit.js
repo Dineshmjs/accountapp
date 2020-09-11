@@ -1,86 +1,46 @@
 import React, { useState, useEffect } from 'react'
-import { useSelector } from 'react-redux';
-import { http } from '../../axios';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import * as yup from 'yup';
+import {useSelector} from 'react-redux'
+import {http} from '../../axios'
+
 import BackButton from '../BackButton';
 import Menu from './Menu'
 import AddMoney from './AddMoney';
+import ReduceMoney from './ReduceMoney';
+import ChangeReason from './ChangeReason';
 // import {Link} from 'react-router-dom'
 
 function Credit() {
+    const menu = useSelector(state=>state.editMenu)
+    const id = useSelector(state=>state.creditId)
+    const [data, setData] = useState({})
 
-    const initialValues = {
-        reason: "",
-        amount: ""
-    }
-
-    const id = useSelector(state => state.creditId)
-    const [data, setData] = useState(initialValues)
-
-    useEffect(() => {
-        http.get("credit/id", { params: { id: id } })
-            .then(res => {
-                // console.log(res.data)
-                setData(res.data)
-            })
-            .catch(err => {
-                // console.log(err)
-            })
-    }, [])
-
-
-    const submit = (valuse, props) => {
-        // console.log(valuse)
-        http.put("credit", valuse)
-            .then(res => {
-                // console.log(res.data)
-                if (res.data.ok === 1) {
-                    alert("Success")
-                }
-                if (res.data.ok === 0) {
-                    alert("update Unsuccess")
-                }
-            })
-            .catch(err => {
-                // console.log(err)
-            })
-
-
-    }
-
-    const validationSchema = yup.object({
-        reason: yup.string().required("Enter valid Reason"),
-        amount: yup.number().moreThan(data.amount - data.availableAmount - 1).required("Enter Amount")
-    })
+    // const [reason, setReason] = useState("")  
+    // const [av, setAv] = useState(0)
+    // const [amount, setAmount] = useState(0)
+    
+    useEffect(()=>{
+        http.get("credit/id", {params:{id:id}})
+        .then(res=>{
+            console.log("Reason",res.data)
+            setData(res.data)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+    },[menu])
     return (
-        <div>   
-            <BackButton path="debit" title="Update Credit" color="w3-purple" />      
-            <Menu />   
-            <AddMoney />
-            
-            <div className="container">
-                <Formik
-                    initialValues={data || initialValues}
-                    onSubmit={submit}
-                    validationSchema={validationSchema}
-                    enableReinitialize
-                >
-                    <Form>
-                        <div>
-                            <Field type="text" name="reason" className="mb-2 ml-2 form-control" />
-                            <ErrorMessage name="reason" />
-                        </div>
-                        <div>
-                            <Field type="number" name="amount" className="mb-2 ml-2 form-control" />
-                            <ErrorMessage name="amount" />
-                        </div>
-                        <div className="w3-center">
-                            <button type="submit" className="btn btn-primary">Update</button>
-                        </div>
-                    </Form>
-                </Formik>
-            </div>
+        <div className="container">
+            <BackButton path="/debit" title="Update Credit" color="w3-purple" />
+            <Menu />            
+            {
+                menu === "addmoney" && <AddMoney amount={data.amount} av={data.availableAmount} reason={data.reason} id={data._id} />
+            }
+            {
+                menu === "reducemoney" && <ReduceMoney />
+            }
+            {
+                menu === "reason" && <ChangeReason />
+            }
         </div>
     )
 }

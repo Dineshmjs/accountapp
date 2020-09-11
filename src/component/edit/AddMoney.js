@@ -2,11 +2,12 @@ import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup' 
 
-function AddMoney() {
+function AddMoney(props) {
+    console.log("addmoney",props)
 
     const initialValues = {
         name:"addmoney",
-        amount: 0
+        amount: 1
     }
 
     const submit = (value, props) => {
