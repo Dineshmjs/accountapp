@@ -1,16 +1,34 @@
 import React from 'react'
 import { Formik, Form, Field, ErrorMessage } from 'formik'
 import * as yup from 'yup' 
+import {http} from '../../axios'
 
-function ChangeReason() {
+function ChangeReason({data,path,loadData}) {
     
     const initialValues = {
         name:"reason",
-        reason: ""
+        reason: data.reason,
+        id:data._id
     }
 
-    const submit = (value, props) => {
-        console.log("values", value)
+    const submit = (values, props) => {
+        console.log("values", values)
+
+        http.put("credit",values)
+        .then(res=>{
+            if(res.data.ok === 1){
+                alert("Reason Changed Successfully")
+                loadData()
+            }
+            else{
+                alert("Error")
+            }
+            console.log("addMoney",res.data)
+        })
+        .catch(err=>{
+            console.log("addMoney",err)
+        })
+
         props.resetForm()
     }
 
@@ -25,7 +43,8 @@ function ChangeReason() {
             <Formik
                 initialValues={initialValues}
                 onSubmit={submit}
-            validationSchema={validationSchema}
+                validationSchema={validationSchema}
+                enableReinitialize
             >
                 <Form>
                     <div className="form-group">
